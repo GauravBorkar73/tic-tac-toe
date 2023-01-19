@@ -1,0 +1,180 @@
+<html>
+<head>
+    <title>TicTacToe</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style1.css">
+    <script src="./js/index.js"></script>
+   
+
+    <script>
+       var x = "X";
+       var o = "O";
+       var num = 2 ;
+
+        $(document).ready(function()
+        {
+
+            $(".sq").click(function select_box()
+            {
+                
+                var cmpr = $(this).text();
+
+                if( cmpr == "X" || cmpr == "O")
+                {
+                    return ;
+                } 
+                
+                    if (num % 2 == 0)
+                    {
+                    $(this).text(x).css("color","red");
+                    }
+                    else
+                     {
+                     $(this).text(o).css("color","green");
+                     }
+                    num ++;
+                
+                
+               if(($("#div1").text() == "X" && $("#div2").text() == "X" && $("#div3").text() == "X") ||
+                  ($("#div1").text() == "O" && $("#div2").text() == "O" && $("#div3").text() == "O")) 
+                  {
+
+                    alert($("#div1").text() + " " + "win");
+                    $("#div1").css({"background-color":"white" , "opacity":"0.8"});
+                    $("#div2").css({"background-color":"white" , "opacity":"0.8"});
+                    $("#div3").css({"background-color":"white" , "opacity":"0.8"}); 
+                  }
+                  
+               else if(($("#div4").text() == "X" && $("#div5").text() == "X" && $("#div6").text() == "X") ||
+                      ($("#div4").text() == "O" && $("#div5").text() == "O" && $("#div6").text() == "O")) 
+                  {
+                    alert($("#div4").text() + " " + "win");
+                    $("#div4").css({"background-color":"white" , "opacity":"0.8"});
+                    $("#div5").css({"background-color":"white" , "opacity":"0.8"});
+                    $("#div6").css({"background-color":"white" , "opacity":"0.8"}); 
+                  }
+
+               else if(($("#div7").text() == "X" && $("#div8").text() == "X" && $("#div9").text() == "X") ||
+                       ($("#div7").text() == "O" && $("#div8").text() == "O" && $("#div9").text() == "O")) 
+                  {
+                    alert($("#div7").text() + " " + "win");
+                    $("#div7").css({"background-color":"white" , "opacity":"0.8"});
+                    $("#div8").css({"background-color":"white" , "opacity":"0.8"});
+                    $("#div9").css({"background-color":"white" , "opacity":"0.8"}); 
+                  }
+
+               else if(($("#div1").text() == "X" && $("#div4").text() == "X" && $("#div7").text() == "X") ||
+                       ($("#div1").text() == "O" && $("#div4").text() == "O" && $("#div7").text() == "O")) 
+                  {
+                    alert($("#div1").text() + " " + "win");
+                    $("#div1").css({"background-color":"white" , "opacity":"0.8"});
+                    $("#div4").css({"background-color":"white" , "opacity":"0.8"});
+                    $("#div7").css({"background-color":"white" , "opacity":"0.8"}); 
+                  }
+
+               else if(($("#div2").text() == "X" && $("#div5").text() == "X" && $("#div8").text() == "X") ||
+                       ($("#div2").text() == "O" && $("#div5").text() == "O" && $("#div8").text() == "O")) 
+                  {
+                    alert($("#div2").text() + " " + "win");
+                    $("#div2").css({"background-color":"white" , "opacity":"0.8"});
+                    $("#div5").css({"background-color":"white" , "opacity":"0.8"});
+                    $("#div8").css({"background-color":"white" , "opacity":"0.8"}); 
+                  }
+
+               else if(($("#div3").text() == "X" && $("#div6").text() == "X" && $("#div9").text() == "X") ||
+                       ($("#div3").text() == "O" && $("#div6").text() == "O" && $("#div9").text() == "O")) 
+                  {
+                    alert($("#div3").text() + " " + "win");
+                    $("#div3").css({"background-color":"white" , "opacity":"0.8"});
+                    $("#div6").css({"background-color":"white" , "opacity":"0.8"});
+                    $("#div9").css({"background-color":"white" , "opacity":"0.8"}); 
+                  }
+                  
+               else if(($("#div1").text() == "X" && $("#div5").text() == "X" && $("#div9").text() == "X") ||
+                       ($("#div1").text() == "O" && $("#div5").text() == "O" && $("#div9").text() == "O")) 
+                  {
+                    alert($("#div1").text() + " " + "win");
+                    $("#div1").css({"background-color":"white" , "opacity":"0.8"});
+                    $("#div5").css({"background-color":"white" , "opacity":"0.8"});
+                    $("#div9").css({"background-color":"white" , "opacity":"0.8"}); 
+                  }
+
+               else if(($("#div3").text() == "X" && $("#div5").text() == "X" && $("#div7").text() == "X") ||
+                       ($("#div3").text() == "O" && $("#div5").text() == "O" && $("#div7").text() == "O")) 
+                  {
+                    alert($("#div3").text() + " " + "win");
+                    $("#div3").css({"background-color":"white" , "opacity":"0.8"});
+                    $("#div5").css({"background-color":"white" , "opacity":"0.8"});
+                    $("#div7").css({"background-color":"white" , "opacity":"0.8"}); 
+                  }
+                
+            }); 
+
+            $("#reset_button").click(function(){
+        
+                $(".sq").text("").css("background","none");
+              
+        });
+
+        //alert('hi');
+        let animatetext = function(){
+          //alert("hello");
+            let $elements = $(".tt-holder .tt");
+            $(".ttt").tickerText($elements, 17, 2, 30, 1, 0.7, 3);
+          }
+          $(animatetext);
+        });   
+    </script>
+
+</head>
+<body>
+  <!--<div id="hd"><h1>Let's Play Tic Tac Toe!!!</h1></div>--> 
+   <div id="holder" class="text tt-holder">
+   <h1> <p class="tt">Let's Play <span>Tic Tac Toe!!</span></p></h1>
+    <h2 class="ttt"></h2>
+  </div>
+    <div class="container">
+        <div class="row">
+            <div class="col col-sm-4 col-md-4 col-lg-3 ">
+            
+            </div>
+            <div class="col col-sm-4 col-md-4 col-lg-2 sq  "  id="div1" ></div>
+            <div class="col col-sm-4 col-md-4 col-lg-2 sq  "  id="div2"></div>    
+            <div class="col col-sm-4 col-md-4 col-lg-2 sq  "  id="div3"></div>
+            <div class="col col-sm-4 col-md-4 col-lg-3 ">
+                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-sm-4 col-md-4 col-lg-3 ">
+                
+            </div>
+            <div class="col col-sm-4 col-md-4 col-lg-2 sq " id="div4"></div>
+            <div class="col col-sm-4 col-md-4 col-lg-2 sq " id="div5"></div>
+            <div class="col col-sm-4 col-md-4 col-lg-2 sq " id="div6"></div>
+            <div class="col col-sm-4 col-md-4 col-lg-3 ">
+                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-sm-4 col-md-4 col-lg-3 ">
+                
+            </div>
+            <div class="col col-sm-4 col-md-4 col-lg-2 sq " id="div7"></div>
+            <div class="col col-sm-4 col-md-4 col-lg-2 sq " id="div8"></div>
+            <div class="col col-sm-4 col-md-4 col-lg-2 sq " id="div9"></div>
+            <div class="col col-sm-4 col-md-4 col-lg-3 ">
+                
+            </div>
+        </div>
+        <button type="btn" id="reset_button" class="btn-sm bg-white rounded text-danger btn-outline-danger">Play Again</button>
+    </div>
+
+
+</body>
+</html>
